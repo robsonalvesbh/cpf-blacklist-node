@@ -1,12 +1,12 @@
 'use strict';
 
-var express = require('express');
-var apiRoutes = require('./routes/apiRoutes');
+const express = require('express');
+const apiRoutes = require('./routes/api');
 
 // App
-var app = express();
+const app = express();
 app.use('/api/v1', apiRoutes);
 
-app.listen(8080, () => {
-  console.log('API listening on port 8080');
+app.listen(3000, () => {
+  console.log('API listening on port 3000');
 });
