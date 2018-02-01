@@ -1,0 +1,14 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: node_modules/.bin/nodemon --exec npm start
+    environment:
+      NODE_ENV: development
+    ports:
+      - 8080:8080
+    volumes:
+     - .:/home/app
+     - /home/app/node_modules

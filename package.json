@@ -1,0 +1,14 @@
+{
+  "name": "cpf_blacklist_node",
+  "version": "1.0.0",
+  "description": "CPF Blacklist com Nodejs",
+  "author": "Robson Alves <robsonalves.dev@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "nodemon": "^1.10.2"
+  }
+}
