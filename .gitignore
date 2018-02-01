@@ -3,3 +3,5 @@ npm-debug.log
 \.config/
 \.npm/
 \.vscode/
+
+database/db\.sqlite
