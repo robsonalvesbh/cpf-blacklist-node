@@ -1,7 +1,4 @@
-const sequelize = require('./../config/database');
-
 module.exports = (sequelize, DataTypes) => {
-
   const Blacklist = sequelize.define('blacklist', {
     id: {
       type: DataTypes.INTEGER,
@@ -14,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         notEmpty: true,
       },
-    }
+    },
   });
 
   return Blacklist;

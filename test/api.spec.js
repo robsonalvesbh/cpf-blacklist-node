@@ -1,9 +1,10 @@
 const chai = require('chai');
 const chaiHttp = require('chai-http');
-const expect = chai.expect;
+
+const { expect } = chai;
 
 chai.use(chaiHttp);
-const request = chai.request;
+const { request } = chai;
 const constants = require('./../app/config/constants');
 
 describe('Route GET /api/v1/cpf', () => {
@@ -43,9 +44,8 @@ describe('Route GET /api/v1/cpf/:cpf', () => {
 
 describe('Route POST /api/v1/cpf/', () => {
   it('Should add a cpf on blacklist', (done) => {
-
-    let cpf = {
-      'cpf': constants.CPF_TEST
+    const cpf = {
+      cpf: constants.CPF_TEST,
     };
 
     request(constants.ENDPOINT_API_V1)
@@ -74,7 +74,7 @@ describe('Route DELETE /api/v1/cpf/:cpf', () => {
 describe('Route DELETE /api/v1/cpf/:cpf', () => {
   it('Should return error a cpf on blacklist', (done) => {
     request(constants.ENDPOINT_API_V1)
-      .delete(`/cpf/99999999999`)
+      .delete('/cpf/99999999999')
       .end((err, res) => {
         expect(res.status).to.eql(constants.STATUS_200);
         expect(res.body.msg).to.eql(constants.MSG_CPF_NOT_FOUND_ON_BLACKLIST);
@@ -82,5 +82,4 @@ describe('Route DELETE /api/v1/cpf/:cpf', () => {
       });
   });
 });
-
 

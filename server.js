@@ -1,9 +1,8 @@
-'use strict';
+
 
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 const apiRoutes = require('./app/routes/api');
-const sequelize = require('./app/config/database');
 
 const app = express();
 app.use(bodyParser());
