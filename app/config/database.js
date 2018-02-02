@@ -4,12 +4,8 @@ const sequelize = new Sequelize('sqlite://./database/db.sqlite', { operatorsAlia
 
 sequelize
   .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+  .then(() => console.log('Connection has been established successfully.'))
+  .catch(err => console.error('Unable to connect to the database:', err));
 
 sequelize.sync();
 

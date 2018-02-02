@@ -6,13 +6,13 @@ module.exports = (req, res) => {
 
   Blacklist
     .findAll()
-    .then((cpf) => {
+    .then(cpf => {
       return res.json({
         'status': constants.STATUS_200,
         'cpf': cpf,
       });
     })
-    .catch((error) => {
+    .catch(error => {
       return res.json({
         'status': constants.STATUS_500,
         'msg': error,

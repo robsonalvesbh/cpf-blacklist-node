@@ -6,7 +6,7 @@ module.exports = (req, res) => {
 
   Blacklist
     .destroy({ where: { cpf: req.params.cpf } })
-    .then((cpf) => {
+    .then(cpf => {
 
       if (!cpf) {
         return res.json({
@@ -21,7 +21,7 @@ module.exports = (req, res) => {
       });
 
     })
-    .catch((error) => {
+    .catch(error => {
       return res.json({
         'status': constants.STATUS_500,
         'msg': error,

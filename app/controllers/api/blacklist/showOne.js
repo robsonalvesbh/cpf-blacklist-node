@@ -5,7 +5,7 @@ const constants = require('./../../../config/constants');
 module.exports = (req, res) => {
   Blacklist
     .findOne({ where: { cpf: req.params.cpf } })
-    .then((cpf) => {
+    .then(cpf => {
 
       if (!cpf) {
         return res.json({
@@ -20,7 +20,7 @@ module.exports = (req, res) => {
       });
 
     })
-    .catch((error) => {
+    .catch(error => {
       return res.json({
         'status': constants.STATUS_500,
         'msg': error,
