@@ -3,7 +3,7 @@ include mixins/alert.pug
 include mixins/blacklist-table.pug
 
 block css
-  link(href='/node_modules/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+  link(href='dist/css/styles.min.css', rel='stylesheet')
 
 block content
     main.container
@@ -18,32 +18,29 @@ block content
           div.form-group
             button.btn.btn-primary.btn-lg(type="submit") BUSCAR
 
-        div.alert.alert-success.d-none#alert-sucess
-          +alert({
-            status: 'FREE!',
-            msg: 'Este CPF não consta na blacklist.',
-            msgDescription: 'Clique no botão abaixo para adicionar este CPF a blacklist.',
-            idForm: 'form-add',
-            textButton: 'Bloquear CPF',
-            classButton: 'btn btn-danger'
-          })
+      div.alert.alert-success.d-none#alert-sucess
+        +alert({
+          status: 'FREE!',
+          msg: 'Este CPF não consta na blacklist.',
+          msgDescription: 'Clique no botão abaixo para adicionar este CPF a blacklist.',
+          idForm: 'form-add',
+          textButton: 'Adicionar',
+          classButton: 'btn btn-success'
+        })
 
-        div.alert.alert-danger.d-none#alert-error
-          +alert({
-            status: 'BLOCK!',
-            msg: 'Este CPF consta na blacklist.',
-            msgDescription: 'Clique no botão abaixo para remover este CPF da blacklist.',
-            idForm: 'form-remove',
-            textButton: 'Liberar CPF',
-            classButton: 'btn btn-success'
-          })
+      div.alert.alert-danger.d-none#alert-error
+        +alert({
+          status: 'BLOCK!',
+          msg: 'Este CPF consta na blacklist.',
+          msgDescription: 'Clique no botão abaixo para remover este CPF da blacklist.',
+          idForm: 'form-remove',
+          textButton: 'Remover',
+          classButton: 'btn btn-danger'
+        })
+
       hr
 
       +blacklistTable(CpfList, moment)
 
 block js
-  script(src='node_modules/jquery/dist/jquery.min.js', type='text/javascript')
-  script(src='node_modules/jquery-mask-plugin/dist/jquery.mask.min.js', type='text/javascript')
-  script(src='node_modules/sweetalert/dist/sweetalert.min.js', type='text/javascript')
-  script(src='assets/js/custom.js', type='text/javascript')
-  script(src='assets/js/requests.js', type='text/javascript')
+  script(src='dist/js/scripts.min.js', type='text/javascript')

@@ -19,7 +19,6 @@ app.use('/', applicationRoutes);
  */
 app.set('view enginer', 'pug');
 app.set('views', path.join(__dirname, 'app/views'));
-app.use('/node_modules', express.static(path.join(__dirname, '/node_modules/')));
-app.use('/assets', express.static(path.join(__dirname, '/assets/')));
+app.use('/dist', express.static(path.join(__dirname, '/dist/')));
 
 app.listen(3000, () => console.log('API listening on port 3000'));

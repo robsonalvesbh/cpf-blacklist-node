@@ -8,7 +8,8 @@
     "start": "node server.js",
     "test": "mocha 'test/*.spec.js'",
     "lint": "./node_modules/.bin/eslint '**/*.js'",
-    "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix"
+    "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
+    "gulp": "node_modules/.bin/gulp"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -31,6 +32,11 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-merge": "^0.1.1",
+    "gulp-minify": "^2.1.0",
     "mocha": "^5.0.0"
   }
 }
