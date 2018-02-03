@@ -13,4 +13,7 @@ module.exports = {
 
   MSG_FREE: 'FREE',
   MSG_BLOCK: 'BLOCK',
+
+  CPF_TEST: '012.345.678-90',
+  CPF_TEST_FAKE: '167.031.789-76',
 };
