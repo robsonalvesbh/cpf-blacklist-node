@@ -6,12 +6,16 @@ const constants = require('./../../../config/constants');
 module.exports = (req, res) => {
   Blacklist
     .create(req.body)
-    .then(() => res.json({
-      status: constants.STATUS_200,
-      msg: constants.MSG_CPF_ADDED_BLACKLIST,
-    }))
-    .catch(error => res.json({
-      status: constants.STATUS_500,
-      msg: error,
-    }));
+    .then(() => {
+      res.status(constants.STATUS_201);
+      res.json({
+        msg: constants.MSG_CPF_ADDED_BLACKLIST,
+      });
+    })
+    .catch((error) => {
+      res.status(constants.STATUS_500);
+      res.json({
+        msg: error.errors,
+      });
+    });
 };
