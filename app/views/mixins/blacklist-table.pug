@@ -1,0 +1,14 @@
+mixin blacklistTable(CpfList, moment)
+
+  section.col-md-8.offset-md-2
+    h1 Blacklist
+    table.table.table-striped.table-bordered
+      thead
+        tr
+          th CPF
+          th Data de inclusão
+      tbody
+        each cpf in CpfList
+          tr
+            td= cpf.cpf
+            td=  moment(cpf.createdAt).format('DD/MM/YYYY')

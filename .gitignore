@@ -1,3 +1,7 @@
-node_modules
-npm-debug.log
-.config
+\node_modules/
+*.log
+\.config/
+\.npm/
+\.vscode/
+.bash_history
+database/db\.sqlite
