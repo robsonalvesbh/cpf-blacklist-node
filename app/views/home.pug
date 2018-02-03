@@ -1,0 +1,67 @@
+html
+  head
+    title Blacklist de CPF
+    link(href='/node_modules/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+  body
+    main.container
+      section.jumbotron
+        h1.display-4 Blacklist de CPF
+        p.lead Veja se seu CPF se encontra na lista
+
+        form#form-search(action=url, method='POST')
+          div.form-group
+            input.form-control.input-cpf(type="text", name="cpf", placeholder="Informe seu CPF", data-mask="000.000.000-00", required="required")
+
+          div.form-group
+            button.btn.btn-primary.btn-lg(type="submit") BUSCAR
+
+        div.alert.alert-success.d-none#alert-sucess
+          strong FREE!
+          .
+            &nbsp; Este CPF não consta na blacklist.
+          br
+          hr
+
+          small Clique no botão abaixo para adicionar este CPF a blacklist.
+          br
+          br
+
+          form#form-add(action=url, method='POST')
+            input.form-control.input-cpf(type="hidden", name="cpf")
+            button.btn.btn-primary(type="submit") Adicionar
+
+        div.alert.alert-danger.d-none#alert-error
+          strong BLOCK!
+          .
+            &nbsp; Este CPF consta na blacklist.
+          br
+          hr
+
+          small Clique no botão abaixo para remover este CPF da blacklist.
+          br
+          br
+
+          form#form-remove(action=url, method='POST')
+            input.form-control.input-cpf(type="hidden", name="cpf")
+            button.btn.btn-danger(type="submit") Remover
+
+      hr
+
+      section.col-md-8.offset-md-2
+        h1 CPF 's que se encontram na blacklist
+        table.table.table-striped.table-bordered
+          thead
+            tr
+              th CPF
+              th Data de inclusão
+          tbody
+            each cpf in listCpf
+              tr
+                td= cpf.cpf
+                td=  moment(cpf.createdAt).format('DD/MM/YYYY')
+
+    script(src='node_modules/jquery/dist/jquery.min.js', type='text/javascript')
+    script(src='node_modules/jquery-mask-plugin/dist/jquery.mask.min.js', type='text/javascript')
+    script(src='node_modules/sweetalert/dist/sweetalert.min.js', type='text/javascript')
+    script(src='assets/js/custom.js', type='text/javascript')
+    script(src='assets/js/requests.js', type='text/javascript')
