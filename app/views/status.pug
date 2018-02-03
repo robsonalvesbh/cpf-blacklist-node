@@ -1,0 +1,29 @@
+extends layout/main.pug
+include mixins/alert.pug
+include mixins/blacklist-table.pug
+
+block css
+  link(href='/node_modules/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+
+block content
+    main.container
+      section.jumbotron
+        h1.display-4 Status da aplicação
+
+        hr
+
+        ul
+          li Uptime: #{uptime.hours()} horas #{uptime.minutes()} minutos  e #{uptime.seconds()} segundos
+          li Uso aproximado de memória:
+            ul
+              li Total: #{Math.floor(((memoryUsage.heapTotal / 1024 / 1024) * 100)) / 100 } MB
+              li Usada: #{Math.floor(((memoryUsage.heapUsed / 1024 / 1024) * 100)) / 100 } MB
+          li Quantidade de consultas no DB: #{queriesExecuted}
+          li Quantidade de cpf na Blacklist: #{cpfOnBlacklist}
+
+block js
+  script(src='node_modules/jquery/dist/jquery.min.js', type='text/javascript')
+  script(src='node_modules/jquery-mask-plugin/dist/jquery.mask.min.js', type='text/javascript')
+  script(src='node_modules/sweetalert/dist/sweetalert.min.js', type='text/javascript')
+  script(src='assets/js/custom.js', type='text/javascript')
+  script(src='assets/js/requests.js', type='text/javascript')
