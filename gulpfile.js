@@ -27,8 +27,8 @@ gulp.task('compress-js', () => {
     });
 });
 
-gulp.task('compress-js', () => gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css'])
+gulp.task('compress-css', () => gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css'])
   .pipe(concat('styles.min.css'))
   .pipe(gulp.dest('dist/css')));
 
-gulp.task('default', ['compress-js']);
+gulp.task('default', ['compress-js', 'compress-css']);

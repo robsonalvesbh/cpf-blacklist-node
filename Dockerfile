@@ -12,4 +12,6 @@ RUN npm cache clean && npm install --silent --progress=false
 
 COPY . $HOME
 
+RUN npm run gulp
+
 CMD ["npm", "start"]

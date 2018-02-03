@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: node_modules/.bin/nodemon --exec npm run gulp && npm start
+    command: node_modules/.bin/nodemon --exec npm start
     environment:
       NODE_ENV: development
     ports:
@@ -13,3 +13,4 @@ services:
     volumes:
      - .:/cpf_blacklist_node
      - /cpf_blacklist_node/node_modules
+     - /cpf_blacklist_node/dist
