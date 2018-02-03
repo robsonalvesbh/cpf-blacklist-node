@@ -16,6 +16,7 @@
 ## Backend
 - Nodejs 8: JavaScript runtime
 - ExpressJS: Framework web
+- Body-parser: Disponibiliza os dados da request em req.body
 - Sequelize: ORM
 - Moment: Manipulação e data e hora
 - Nodemon: Reload automático

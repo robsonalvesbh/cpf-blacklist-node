@@ -8,7 +8,7 @@ module.exports = (req, res) => {
   Blacklist
     .findAll()
     .then(cpf => res.render('home.pug', {
-      listCpf: cpf,
+      CpfList: cpf,
       url: `${constants.ENDPOINT_API_V1}/cpf/`,
       moment,
     }));

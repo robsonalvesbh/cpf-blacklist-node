@@ -1,0 +1,16 @@
+mixin alert(property)
+
+  p
+    strong #{property.status}
+    .
+      &nbsp; #{property.msg}
+
+  hr
+
+  small #{property.msgDescription}
+  br
+  br
+
+  form(action=url, method='POST', id=property.idForm)
+    input.form-control.input-cpf(type="hidden", name="cpf")
+    button(type="submit", class=property.classButton) #{property.textButton}
