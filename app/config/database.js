@@ -1,6 +1,14 @@
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('sqlite://./database/db.sqlite', { operatorsAliases: Sequelize.Op });
+global.queriesExecuted = 0;
+
+const sequelize = new Sequelize('sqlite://./database/db.sqlite', {
+  operatorsAliases: Sequelize.Op,
+  logging: (query) => {
+    console.log(query);
+    global.queriesExecuted += 1;
+  },
+});
 
 sequelize
   .authenticate()

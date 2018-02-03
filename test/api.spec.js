@@ -10,7 +10,7 @@ const constants = require('./../app/config/constants');
 /**
  * Adiciona CPF a blocklist
  */
-describe('Route POST /api/v1/cpf/', () => {
+describe('Route POST /api/v1/cpf', () => {
   it('Should add a cpf on blacklist', (done) => {
     const cpf = {
       cpf: constants.CPF_TEST,
@@ -22,6 +22,25 @@ describe('Route POST /api/v1/cpf/', () => {
       .end((err, res) => {
         expect(res.status).to.eql(constants.STATUS_201);
         expect(res.body.msg).to.eql(constants.MSG_CPF_ADDED_BLACKLIST);
+        done();
+      });
+  });
+});
+
+/**
+ * Tenta adicionar CPF já existente na blocklist
+ */
+describe('Route POST /api/v1/cpf', () => {
+  it('Should add a cpf on blacklist', (done) => {
+    const cpf = {
+      cpf: constants.CPF_TEST,
+    };
+
+    request(constants.ENDPOINT_API_V1)
+      .post('/cpf')
+      .send(cpf)
+      .end((err, res) => {
+        expect(res.status).to.eql(constants.STATUS_500);
         done();
       });
   });
@@ -96,6 +115,20 @@ describe('Route DELETE /api/v1/cpf/:cpf', () => {
       .end((err, res) => {
         expect(res.status).to.eql(constants.STATUS_404);
         expect(res.body.msg).to.eql(constants.MSG_CPF_NOT_FOUND_ON_BLACKLIST);
+        done();
+      });
+  });
+});
+
+/**
+ * Request de status da aplicação
+ */
+describe('Route GET /api/v1/status', () => {
+  it('Should return application status', (done) => {
+    request(constants.ENDPOINT_API_V1)
+      .get('/status')
+      .end((err, res) => {
+        expect(res.status).to.eql(constants.STATUS_200);
         done();
       });
   });
