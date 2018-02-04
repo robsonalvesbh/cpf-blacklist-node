@@ -16,4 +16,6 @@ module.exports = {
 
   CPF_TEST: '012.345.678-90',
   CPF_TEST_FAKE: '167.031.789-76',
+
+  MSG_CPF_INVALIDO: 'O CPF informado é invalido',
 };
