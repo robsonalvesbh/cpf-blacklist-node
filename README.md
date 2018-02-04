@@ -56,6 +56,17 @@
 ## Tests
   - Execute o comando `npm run test` para os testes.
 
+# Aplicação web
+
+Foi criado duas páginas para que o usuário possa interagir com a aplicação e utilizar os principais recursos através de uma interface web simples.
+
+## URLs disponíveis
+
+  - http://127.0.0.1:3000/ - Nesta página usuário pode consultar, adicionar e remover um cpf da blacklist, além de ver todos os CPFs que estão na blacklist.
+
+  - http://127.0.0.1:3000/status - Está página conta com algumas informações relevantes sobre a aplicação, nela é possível ver o uptime (Tempo que a aplicação está disponível), consumo de memória, quantidade de consultas realizadas no Banco de dados e quantidade de CPFs que estão na blacklist.
+
+
 # Documentação da API
 
 ## Endpoint
