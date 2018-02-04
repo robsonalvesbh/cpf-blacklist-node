@@ -1,12 +1,11 @@
 const Sequelize = require('sequelize');
-
-global.queriesExecuted = 0;
+let monitoringQueries = require('./monitoringQueries');
 
 const sequelize = new Sequelize('sqlite://./database/db.sqlite', {
   operatorsAliases: Sequelize.Op,
   logging: (query) => {
     console.log(query);
-    global.queriesExecuted += 1;
+    monitoringQueries.queriesExecuted += 1;
   },
 });
 
