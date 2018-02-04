@@ -13,13 +13,13 @@ block content
         hr
 
         ul
-          li Uptime: #{uptime}
-          li Uso aproximado de memória:
+          li <strong>Uptime:</strong> #{uptime}
+          li <strong>Uso aproximado de memória:</strong>
             ul
-              li Total: #{memoryUsed.total}
-              li Usada: #{memoryUsed.used}
-          li Quantidade de consultas no DB: #{queriesExecuted}
-          li Quantidade de cpf na Blacklist: #{cpfOnBlacklist}
+              li <strong>Total:</strong> #{memoryUsed.total}
+              li <strong>Usada:</strong> #{memoryUsed.used}
+          li <strong>Quantidade de consultas no DB:</strong> #{queriesExecuted}
+          li <strong>Quantidade de cpf na Blacklist:</strong> #{cpfOnBlacklist}
 
 block js
   script(src='dist/js/scripts.min.js', type='text/javascript')

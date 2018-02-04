@@ -6,7 +6,7 @@ module.exports = {
   STATUS_500: 500,
   STATUS_404: 404,
 
-  MSG_CPF_ADDED_BLACKLIST: 'CPF incluido com sucesso na blacklist',
+  MSG_CPF_ADDED_BLACKLIST: 'CPF Incluído com sucesso na blacklist',
 
   MSG_CPF_REMOVED_BLACKLIST: 'CPF removido com sucesso na blacklist',
   MSG_CPF_NOT_FOUND_ON_BLACKLIST: 'CPF não se encontra na blacklist',
