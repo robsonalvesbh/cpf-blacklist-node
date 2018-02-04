@@ -2,18 +2,15 @@
 const sequelize = require('./../../config/database');
 
 const Blacklist = sequelize.import('./../../models/Blacklist');
-const uptime = require('./../../helpers/uptime');
-const memory = require('./../../helpers/memory');
+const uptimeHelper = require('./../../helpers/uptimeHelper');
+const memoryHelper = require('./../../helpers/memoryHelper');
 
-module.exports = (req, res) => {
-  Blacklist
-    .count()
-    .then((quantity) => {
-      res.render('status.pug', {
-        uptime: uptime.humanizeUptime(),
-        memoryUsed: memory.MemoryUsageInMB(),
-        queriesExecuted: global.queriesExecuted,
-        cpfOnBlacklist: quantity,
-      });
-    });
-};
+module.exports = (req, res) => Blacklist
+  .count()
+  .then(quantity => res.render('status.pug', {
+    uptime: uptimeHelper.humanizeUptime(),
+    memoryUsed: memoryHelper.getMemoryUsed(),
+    queriesExecuted: global.queriesExecuted,
+    cpfOnBlacklist: quantity,
+  }));
+
