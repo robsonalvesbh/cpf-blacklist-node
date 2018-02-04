@@ -8,7 +8,7 @@ module.exports = {
 
   MSG_CPF_ADDED_BLACKLIST: 'CPF Incluído com sucesso na blacklist',
 
-  MSG_CPF_REMOVED_BLACKLIST: 'CPF removido com sucesso na blacklist',
+  MSG_CPF_REMOVED_BLACKLIST: 'CPF removido com sucesso da blacklist',
   MSG_CPF_NOT_FOUND_ON_BLACKLIST: 'CPF não se encontra na blacklist',
 
   MSG_FREE: 'FREE',
@@ -19,5 +19,5 @@ module.exports = {
   CPF_TEST_BLOCK: '167.031.789-76',
   CPF_TEST_BLOCK_WITHOUT_FORMAT: '52485688117',
 
-  MSG_CPF_INVALIDO: 'O CPF informado é invalido',
+  MSG_CPF_INVALIDO: 'O CPF informado é inválido',
 };

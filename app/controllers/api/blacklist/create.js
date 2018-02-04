@@ -8,24 +8,17 @@ module.exports = (req, res) => {
   req.body.cpf = cpfValidator.format(req.body.cpf);
 
   if (!cpfValidator.isValid(req.body.cpf)) {
-    res.status(constants.STATUS_404);
-    res.json({
+    return res.status(constants.STATUS_404).json({
       msg: constants.MSG_CPF_INVALIDO,
     });
   }
 
-  Blacklist
+  return Blacklist
     .create(req.body)
-    .then(() => {
-      res.status(constants.STATUS_201);
-      res.json({
-        msg: constants.MSG_CPF_ADDED_BLACKLIST,
-      });
-    })
-    .catch((error) => {
-      res.status(constants.STATUS_500);
-      res.json({
-        msg: error.errors,
-      });
-    });
+    .then(() => res.status(constants.STATUS_201).json({
+      msg: constants.MSG_CPF_ADDED_BLACKLIST,
+    }))
+    .catch(error => res.status(constants.STATUS_500).json({
+      msg: error.errors,
+    }));
 };

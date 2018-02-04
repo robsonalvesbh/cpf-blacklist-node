@@ -8,31 +8,25 @@ module.exports = (req, res) => {
   req.params.cpf = cpfValidator.format(req.params.cpf);
 
   if (!cpfValidator.isValid(req.params.cpf)) {
-    res.status(constants.STATUS_404);
-    res.json({
+    return res.status(constants.STATUS_404).json({
       msg: constants.MSG_CPF_INVALIDO,
     });
   }
 
-  Blacklist
+  return Blacklist
     .findOne({ where: { cpf: req.params.cpf } })
     .then((cpf) => {
       if (!cpf) {
-        res.status(constants.STATUS_404);
-        res.json({
+        return res.status(404).json({
           cpf: constants.MSG_FREE,
         });
       }
 
-      res.status(constants.STATUS_200);
-      res.json({
+      return res.status(200).json({
         cpf: constants.MSG_BLOCK,
       });
     })
-    .catch((error) => {
-      res.status(constants.STATUS_500);
-      res.json({
-        msg: error.errors,
-      });
-    });
+    .catch(error => res.status(500).json({
+      msg: error.errors,
+    }));
 };
