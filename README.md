@@ -3,7 +3,7 @@
 
 # Docker
 ## Executando a aplicação
-- Navegue até a pasta do projeto e execute o comando `docker-compose up`, o docker irá construir a imagem do projeto, criar e executar o container.
+- Navegue até a pasta do projeto e execute o comando `docker-compose up --build`, o docker irá construir a imagem do projeto, criar e executar o container.
 - O projeto estará disponível na seguinte url: http://127.0.0.1:3000/
 
 ## Comandos adicionais
