@@ -67,7 +67,7 @@ Foram criadas duas páginas para que o usuário possa interagir com a aplicaçã
 
 ## URLs disponíveis
 
-  - http://127.0.0.1:3000/ - Nesta página usuário pode consultar, adicionar e remover um cpf da blacklist, além de ver todos os CPFs que estão na blacklist.
+  - http://127.0.0.1:3000/ - Nesta página usuário pode consultar, adicionar e remover um CPF da blacklist, além de ver todos os CPFs que estão na blacklist.
 
   - http://127.0.0.1:3000/status - Esta página conta com algumas informações relevantes sobre a aplicação, nela é possível ver o uptime (Tempo que a aplicação está disponível), consumo de memória, quantidade de consultas realizadas no Banco de dados e quantidade de CPFs que estão na blacklist.
 
