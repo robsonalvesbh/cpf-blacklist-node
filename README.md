@@ -2,9 +2,24 @@
 - https://github.com/robsonalvesbh/cpf-blacklist-node
 
 # Docker
-## Execução
-- Navegue até a pasta do projeto e execute o comando `docker-compose up`, o docker irá construir a imagem do projeto e criar e executar o container.
+## Executando a aplicação
+- Navegue até a pasta do projeto e execute o comando `docker-compose up`, o docker irá construir a imagem do projeto, criar e executar o container.
 - O projeto estará disponível na seguinte url: http://127.0.0.1:3000/
+
+## Comandos adicionais
+
+Para poder executar os comandos adicionais é necessário acessar o container, para isso execute o seguinte comando no terminal:
+
+    docker exec -it node_app bash
+
+### Linter
+- Execute o comando `npm run lint` para executar o linter em todo o código
+
+### Gulp
+- Execute o comando `npm run gulp` para executar o gulp na pasta `assets` e gerar os arquivos da pasta `dist`.
+
+### Tests
+  - Execute o comando `npm run test` para os testes.
 
 # Dependências utilizadas
 
@@ -46,25 +61,15 @@
 # IDEs e editores de texto:
 - Visual Studio Code
 
-# Comandos adicionais
-## Linter
-- Execute o comando `npm run lint` para executar o linter em todo o código
-
-## Gulp
-- Execute o comando `npm run gulp` para executar o gulp na pasta `assets` e gerar os arquivos da pasta `dist`.
-
-## Tests
-  - Execute o comando `npm run test` para os testes.
-
 # Aplicação web
 
-Foi criado duas páginas para que o usuário possa interagir com a aplicação e utilizar os principais recursos através de uma interface web simples.
+Foram criadas duas páginas para que o usuário possa interagir com a aplicação e utilizar os principais recursos através de uma interface web simples.
 
 ## URLs disponíveis
 
   - http://127.0.0.1:3000/ - Nesta página usuário pode consultar, adicionar e remover um cpf da blacklist, além de ver todos os CPFs que estão na blacklist.
 
-  - http://127.0.0.1:3000/status - Está página conta com algumas informações relevantes sobre a aplicação, nela é possível ver o uptime (Tempo que a aplicação está disponível), consumo de memória, quantidade de consultas realizadas no Banco de dados e quantidade de CPFs que estão na blacklist.
+  - http://127.0.0.1:3000/status - Esta página conta com algumas informações relevantes sobre a aplicação, nela é possível ver o uptime (Tempo que a aplicação está disponível), consumo de memória, quantidade de consultas realizadas no Banco de dados e quantidade de CPFs que estão na blacklist.
 
 
 # Documentação da API
@@ -77,10 +82,10 @@ Foi criado duas páginas para que o usuário possa interagir com a aplicação e
 
 ### - Consulta CPF
 
-Está requisição retorna se o CPF se o está ou não na blacklist:
+Esta requisição retorna se o CPF se o está ou não na blacklist:
 
-  - FREE: Não está na blacklist
-  - BLOCK: Está na blacklist
+  - **FREE**: Não está na blacklist
+  - **BLOCK**: Está na blacklist
 
 #### Método HTTP
 
@@ -106,7 +111,7 @@ O CPF pode ser enviado com ou sem formatação.
 
 ### - Adiciona CPF a blacklist
 
-Está requisição adiciona o CPF informado a blacklist.
+Esta requisição adiciona o CPF informado a blacklist.
 
 #### Método HTTP
     POST
@@ -119,7 +124,7 @@ Está requisição adiciona o CPF informado a blacklist.
 
     {cpf} - CPF que deseja adicionar a blacklist
 
-Os parâmetros desta requisição deve ser enviado utilizando o formato `JSON`, veja o exemplo abaixo:
+O parâmetro desta requisição deve ser enviado utilizando o formato `JSON`, veja o exemplo abaixo:
 
 ````json
   {
@@ -139,7 +144,7 @@ O CPF pode ser enviado com ou sem formatação.
 
 ### - Remove CPF da blacklist
 
-Está requisição remove o CPF informado da blacklist.
+Esta requisição remove o CPF informado da blacklist.
 
 #### Método HTTP
     DELETE
@@ -164,7 +169,7 @@ O CPF pode ser enviado com ou sem formatação.
 
 ### - Retorna todos os CPFs que estão na blacklist.
 
-Está requisição retorna todos o CPFs que estam na blacklist.
+Esta requisição retorna todos o CPFs que estão na blacklist.
 
 #### Método HTTP
 
@@ -191,12 +196,16 @@ Está requisição retorna todos o CPFs que estam na blacklist.
 
 ### - Status da aplicação
 
-Está requisição retorna algumas informações da aplicação, como:
+Esta requisição retorna algumas informações da aplicação, como:
 
  - Uptime (Tempo que a aplicação está diponível)
  - Memória utilizada
  - Quantidade de Queries executadas
- - Quantidade de CPFs ná Blacklist
+ - Quantidade de CPFs na blacklist
+
+#### Método HTTP
+
+    GET
 
 #### URL
 
