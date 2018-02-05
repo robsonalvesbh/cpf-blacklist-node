@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-let monitoringQueries = require('./monitoringQueries');
+const monitoringQueries = require('./monitoringQueries');
 
 const sequelize = new Sequelize('sqlite://./database/db.sqlite', {
   operatorsAliases: Sequelize.Op,
