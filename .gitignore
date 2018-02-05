@@ -5,5 +5,6 @@
 \.vscode/
 .bash_history
 database/db\.sqlite
+database/test_db\.sqlite
 .v8flags.6.1.534.50.d41d8cd98f00b204e9800998ecf8427e.json
 dist/

@@ -6,10 +6,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha 'test/*.spec.js'",
+    "test": "NODE_ENV=test mocha 'test/*.spec.js'",
     "lint": "./node_modules/.bin/eslint '**/*.js'",
     "lint:fix": "./node_modules/.bin/eslint '**/*.js' --fix",
-    "gulp": "node_modules/.bin/gulp"
+    "gulp": "./node_modules/.bin/gulp"
   },
   "dependencies": {
     "body-parser": "^1.18.2",

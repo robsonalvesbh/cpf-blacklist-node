@@ -6,6 +6,9 @@ const { expect } = chai;
 chai.use(chaiHttp);
 const { request } = chai;
 const constants = require('./../app/config/constants');
+const sequelize = require('./../app/config/database');
+
+sequelize.sync({ force: true });
 
 const cpf = {
   free: { cpf: constants.CPF_TEST_FREE },
