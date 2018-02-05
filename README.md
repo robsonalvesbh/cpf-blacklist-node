@@ -31,6 +31,7 @@ Para poder executar os comandos adicionais é necessário acessar o container, p
 - Node 8: JavaScript runtime
 - Express: Framework web
 - Body-parser: Disponibiliza os dados da request em req.body
+- Node-cpf-cnpj: Manipulação e validação de CPF
 - Sequelize: ORM
 - Moment: Manipulação e data e hora
 - Nodemon: Reload automático
@@ -138,7 +139,7 @@ O CPF pode ser enviado com ou sem formatação.
 
 ````json
   {
-    "msg": "CPF incluido com sucesso na blacklist"
+    "msg": "CPF incluído com sucesso na blacklist"
   }
 ````
 
@@ -163,7 +164,7 @@ O CPF pode ser enviado com ou sem formatação.
 
 ````json
   {
-    "msg": "CPF removido com sucesso na blacklist"
+    "msg": "CPF removido com sucesso da blacklist"
   }
 ````
 
@@ -185,10 +186,8 @@ Esta requisição retorna todos o CPFs que estão na blacklist.
   {
     "cpf": [
         {
-            "id": 2,
             "cpf": "092.302.930-29",
-            "createdAt": "2018-02-03T21:20:52.889Z",
-            "updatedAt": "2018-02-03T21:20:52.889Z"
+            "createdAt": "03/02/2018"
         }
     ]
   }
