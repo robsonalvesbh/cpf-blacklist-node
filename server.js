@@ -22,4 +22,19 @@ app.set('view enginer', 'pug');
 app.set('views', path.join(__dirname, 'app/views'));
 app.use('/dist', express.static(path.join(__dirname, '/dist/')));
 
+/**
+ * Tratamento de errors
+ */
+
+const errorRouters = require('./app/exceptions/routersErrors');
+
+app.use(errorRouters);
+
+const errorApplication = require('./app/exceptions/applicationErrors');
+
+app.use(errorApplication);
+
+/**
+ * start server
+ */
 app.listen(3000);

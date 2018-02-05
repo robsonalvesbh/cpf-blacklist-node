@@ -21,4 +21,7 @@ module.exports = {
   CPF_TEST_BLOCK_WITHOUT_FORMAT: '52485688117',
 
   MSG_CPF_INVALIDO: 'O CPF informado é inválido',
+
+  REQUEST_NOT_FOUND: 'Requisição não encontrada',
+  INTERNAL_SERVER_ERROR: 'Ocorreu algum erro inesperado, revise os dados informados!',
 };
