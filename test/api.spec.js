@@ -197,3 +197,17 @@ describe('Route GET /api/v1/status', () => {
   });
 });
 
+/**
+ * Request de rota inválida
+ */
+describe('Route invalid', () => {
+  it('Should return error 500', (done) => {
+    request(constants.ENDPOINT_API_V1)
+      .get('/fake')
+      .end((err, res) => {
+        expect(res.status).to.eql(constants.STATUS_404);
+        expect(res.body.msg).to.eql(constants.REQUEST_NOT_FOUND);
+        done();
+      });
+  });
+});
