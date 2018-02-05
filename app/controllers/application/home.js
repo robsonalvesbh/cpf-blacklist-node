@@ -1,4 +1,3 @@
-const moment = require('moment');
 const sequelize = require('./../../config/database');
 const constants = require('./../../config/constants');
 
@@ -10,6 +9,5 @@ module.exports = (req, res) => {
     .then(cpf => res.render('home.pug', {
       CpfList: cpf,
       url: `${constants.ENDPOINT_API_V1}/cpf/`,
-      moment,
     }));
 };

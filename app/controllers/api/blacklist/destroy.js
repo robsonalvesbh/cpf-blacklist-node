@@ -12,7 +12,6 @@ module.exports = (req, res) => Blacklist
       });
     }
 
-
     return res.status(constants.STATUS_200).json({
       msg: constants.MSG_CPF_REMOVED_BLACKLIST,
     });

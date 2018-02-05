@@ -4,7 +4,7 @@ const Blacklist = sequelize.import('./../../../models/Blacklist');
 const constants = require('./../../../config/constants');
 
 module.exports = (req, res) => Blacklist
-  .findOne({ where: { cpf: req.params.cpf } })
+  .count({ where: { cpf: req.params.cpf } })
   .then((cpf) => {
     if (!cpf) {
       return res.status(404).json({

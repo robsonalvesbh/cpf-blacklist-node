@@ -11,4 +11,4 @@ mixin blacklistTable(CpfList, moment)
         each cpf in CpfList
           tr
             td= cpf.cpf
-            td=  moment(cpf.createdAt).format('DD/MM/YYYY')
+            td=  cpf.createdAt
