@@ -10,13 +10,11 @@ module.exports = (req, res, next) => {
 };
 
 exports.validate = () => {
-  let cpf = this.getCpf();
+  const cpf = this.getCpf();
 
   if (!cpf) {
     return this.returnError();
   }
-
-  cpf = cpfValidator.format(cpf);
 
   if (!cpfValidator.isValid(cpf)) {
     return this.returnError();
@@ -27,10 +25,12 @@ exports.validate = () => {
 
 exports.getCpf = () => {
   if (this.req.body.cpf) {
+    this.req.body.cpf = cpfValidator.format(this.req.body.cpf);
     return this.req.body.cpf;
   }
 
   if (this.req.params.cpf) {
+    this.req.params.cpf = cpfValidator.format(this.req.params.cpf);
     return this.req.params.cpf;
   }
 
