@@ -21,10 +21,7 @@ gulp.task('compress-js', () => {
     })),
   ])
     .pipe(concat('scripts.min.js'))
-    .pipe(gulp.dest('dist/js'))
-    .on('error', (err) => {
-      console.error('Error in compress task', err.toString());
-    });
+    .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('compress-css', () => gulp.src(['node_modules/bootstrap/dist/css/bootstrap.min.css'])

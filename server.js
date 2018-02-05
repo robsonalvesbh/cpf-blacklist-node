@@ -22,4 +22,4 @@ app.set('view enginer', 'pug');
 app.set('views', path.join(__dirname, 'app/views'));
 app.use('/dist', express.static(path.join(__dirname, '/dist/')));
 
-app.listen(3000, () => console.log('API listening on port 3000'));
+app.listen(3000);
